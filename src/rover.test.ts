@@ -1,6 +1,4 @@
-function leftTurn(a: string) {
-  return "W";
-}
+const leftTurn = (a: string) => "W";
 
 describe("Given input it should return new coordinates", () => {
   test("Give L command should turn from N to W", () => {
