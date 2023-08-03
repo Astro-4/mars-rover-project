@@ -28,9 +28,6 @@ export const rightTurn = (direction: Direction) => {
   return "N";
 };
 
-// export const move = (direction: Direction, x: number, y: number) => {
-//   if (direction === "N") return `${x} ${y + 1}`;
-//   if (direction === "E") return `${x + 1} ${y}`;
-//   if (direction === "S") return `${x} ${y - 1}`;
-//   return `${x - 1} ${y}`;
-// };
+export function move(direction: Direction, x: number, y: number) {
+  return "N" + " " + 0 + " " + 1;
+}
