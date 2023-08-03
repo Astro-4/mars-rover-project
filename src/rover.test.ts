@@ -1,1 +1,5 @@
-//For the first test we want it to fail
+describe("Given input it should return new coordinates",()=>{
+    test("Give L command should turn from N to W", ()=>{
+        expect(leftTurn('N'))toBe('W');
+    })
+} )
