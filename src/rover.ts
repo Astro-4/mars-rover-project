@@ -14,15 +14,23 @@
 */
 //should be able to move forward in the direction it's facing given the 'M' input
 //should only move the number of times the input is provided
-export const leftTurn = (a: string) => {
-  if (a === "N") return "W";
-  if (a === "W") return "S";
-  if (a === "S") return "E";
+type Direction = "N" | "E" | "W" | "S";
+export const leftTurn = (direction: Direction) => {
+  if (direction === "N") return "W";
+  if (direction === "W") return "S";
+  if (direction === "S") return "E";
   return "N";
 };
-export const rightTurn = (a: string) => {
-  if (a === "N") return "E";
-  if (a === "E") return "S";
-  if (a === "S") return "W";
+export const rightTurn = (direction: Direction) => {
+  if (direction === "N") return "E";
+  if (direction === "E") return "S";
+  if (direction === "S") return "W";
   return "N";
 };
+
+// export const move = (direction: Direction, x: number, y: number) => {
+//   if (direction === "N") return `${x} ${y + 1}`;
+//   if (direction === "E") return `${x + 1} ${y}`;
+//   if (direction === "S") return `${x} ${y - 1}`;
+//   return `${x - 1} ${y}`;
+// };

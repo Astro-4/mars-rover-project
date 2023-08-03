@@ -1,4 +1,5 @@
 import { leftTurn, rightTurn } from "./rover";
+
 describe("Given current direction it should turn to the correct direction", () => {
   test("should turn from N to W", () => {
     expect(leftTurn("N")).toBe("W");
@@ -12,6 +13,9 @@ describe("Given current direction it should turn to the correct direction", () =
   test("should turn from E to N", () => {
     expect(leftTurn("E")).toBe("N");
   });
+});
+
+describe("", () => {
   test("should turn from N to E", () => {
     expect(rightTurn("N")).toBe("E");
   });
@@ -23,5 +27,10 @@ describe("Given current direction it should turn to the correct direction", () =
   });
   test("should turn from W to N", () => {
     expect(rightTurn("W")).toBe("N");
+  });
+});
+describe("Given current direction and coordinates should move in that direction", () => {
+  test("should move once towards the direction", () => {
+    expect(move("N", [0, 0])).toEqual("N" + " " + [0, 1]);
   });
 });
