@@ -15,6 +15,7 @@
 //should be able to move forward in the direction it's facing given the 'M' input
 //should only move the number of times the input is provided
 type Direction = "N" | "E" | "W" | "S";
+type Coordinates = [x: number, y: number];
 export const leftTurn = (direction: Direction) => {
   if (direction === "N") return "W";
   if (direction === "W") return "S";
@@ -28,6 +29,6 @@ export const rightTurn = (direction: Direction) => {
   return "N";
 };
 
-export function move(direction: Direction, x: number, y: number) {
-  return "N" + " " + 0 + " " + 1;
+export function move(direction: Direction, coordinates: Coordinates) {
+  return `${direction} ${coordinates[0]} ${coordinates[1] + 1}`;
 }
