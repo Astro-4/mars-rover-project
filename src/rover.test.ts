@@ -33,4 +33,7 @@ describe("Given current direction and coordinates should move in that direction"
   test("should move once towards the direction", () => {
     expect(move("N", [0, 0])).toEqual("N 0 1");
   });
+  test("should move once towards the direction", () => {
+    expect(move("S", [0, 0])).toEqual("S 0 -1");
+  });
 });
