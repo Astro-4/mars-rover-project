@@ -40,6 +40,6 @@ describe("Given current direction and coordinates should move in that direction"
     expect(move("E", [0, 0])).toEqual("E 1 0");
   });
   test("should move once towards the direction", () => {
-    expect(move("W", [0, 0])).toEqual("S -1 0");
+    expect(move("W", [0, 0])).toEqual("W -1 0");
   });
 });

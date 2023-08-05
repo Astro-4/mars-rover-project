@@ -34,8 +34,8 @@ export function move(direction: Direction, coordinates: Coordinates) {
     return `${direction} ${coordinates[0]} ${coordinates[1] + 1}`;
   if (direction === "S")
     return `${direction} ${coordinates[0]} ${coordinates[1] - 1}`;
-  //   if (direction === "E")
-  //     return `${direction} ${coordinates[0] + 1} ${coordinates[1]}`;
-  //   if (direction === "W")
-  //     return `${direction} ${coordinates[0] - 1} ${coordinates[1]}`;
+  if (direction === "E")
+    return `${direction} ${coordinates[0] + 1} ${coordinates[1]}`;
+  if (direction === "W")
+    return `${direction} ${coordinates[0] - 1} ${coordinates[1]}`;
 }
