@@ -16,6 +16,7 @@
 //should only move the number of times the input is provided
 type Direction = "N" | "E" | "W" | "S";
 type Coordinates = [x: number, y: number];
+type Action = "L" | "M" | "R";
 export const leftTurn = (direction: Direction) => {
   if (direction === "N") return "W";
   if (direction === "W") return "S";
