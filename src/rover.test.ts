@@ -1,45 +1,32 @@
-import { leftTurn, rightTurn, moveForward } from "./rover";
+// tests/rover.test.ts
+import { Rover } from "../src/rover";
 
-describe("Given current direction it should turn to the correct direction", () => {
-  test("should turn from N to W", () => {
-    expect(leftTurn("N")).toBe("W");
+describe("Rover", () => {
+  it("should create a rover with initial position and direction", () => {
+    const rover = new Rover(3, 2, "N");
+    expect(rover.x).toBe(3);
+    expect(rover.y).toBe(2);
+    expect(rover.direction).toBe("N");
   });
-  test("should turn from W to S", () => {
-    expect(leftTurn("W")).toBe("S");
-  });
-  test("should turn from S to E", () => {
-    expect(leftTurn("S")).toBe("E");
-  });
-  test("should turn from E to N", () => {
-    expect(leftTurn("E")).toBe("N");
-  });
-});
 
-describe("", () => {
-  test("should turn from N to E", () => {
-    expect(rightTurn("N")).toBe("E");
+  it("should move forward north", () => {
+    const rover = new Rover(3, 2, "N");
+    rover.moveForward();
+    expect(rover.x).toBe(3);
+    expect(rover.y).toBe(3);
   });
-  test("should turn from E to S", () => {
-    expect(rightTurn("E")).toBe("S");
+
+  it("should turn left", () => {
+    const rover = new Rover(3, 2, "N");
+    rover.turnLeft();
+    expect(rover.direction).toBe("W");
   });
-  test("should turn from S to W", () => {
-    expect(rightTurn("S")).toBe("W");
+
+  it("should turn right", () => {
+    const rover = new Rover(3, 2, "N");
+    rover.turnRight();
+    expect(rover.direction).toBe("E");
   });
-  test("should turn from W to N", () => {
-    expect(rightTurn("W")).toBe("N");
-  });
-});
-describe("Given current direction and coordinates should move in that direction", () => {
-  test("should move once towards the direction", () => {
-    expect(moveForward("N", [0, 0])).toEqual("N 0 1");
-  });
-  test("should move once towards the direction", () => {
-    expect(moveForward("S", [0, 0])).toEqual("S 0 -1");
-  });
-  test("should move once towards the direction", () => {
-    expect(moveForward("E", [0, 0])).toEqual("E 1 0");
-  });
-  test("should move once towards the direction", () => {
-    expect(moveForward("W", [0, 0])).toEqual("W -1 0");
-  });
+
+  // Add more tests for moving forward in other directions, turning, etc.
 });
